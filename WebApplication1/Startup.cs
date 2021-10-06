@@ -37,6 +37,8 @@ namespace WebApplication1
       services.AddSingleton<PlayerService>();
 
       services.AddControllers();
+
+      services.AddSwaggerGen();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +50,9 @@ namespace WebApplication1
       }
 
       app.UseHttpsRedirection();
+
+      app.UseSwagger();
+      app.UseSwaggerUI();
 
       app.UseRouting();
 
